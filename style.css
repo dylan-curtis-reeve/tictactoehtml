@@ -1,0 +1,16 @@
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 24px;
+  height: 100px;
+  text-align: center;
+  width: 100px;
+}
