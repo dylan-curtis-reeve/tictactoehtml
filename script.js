@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   let playerChoice = null;
-  let currentPlayer = "X";
+  let currentPlayer = null;
   let gameOver = false;
   var playerSelectX = document.getElementById("x");
   var playerSelectY = document.getElementById("o");
   var playerSelect = document.getElementById("player-select");
   var status = document.getElementById("status");
-  var board = document.getElementById("board");
+  var reset = document.getElementById("reset");
   var squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
     squareEventListenerSetup(squares[i].id);
@@ -20,11 +20,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function playerSelection(selection) {
     if (selection === "x") {
       playerChoice = "X";
+      currentPlayer = "X";
     } else {
       playerChoice = "O";
+      currentPlayer = "O";
     }
     playerSelect.style.display = "none";
   }
+
+  reset.addEventListener("click", function () {
+    for (let i = 0; i < squares.length; i++) {
+      squares[i].textContent = "";
+    }
+    playerChoice = null;
+    currentPlayer = "X";
+    gameOver = false;
+    status.textContent = "X's turn";
+    playerSelect.style.display = "block";
+  });
+
   function squareEventListenerSetup(id) {
     var sq = document.getElementById(id);
     sq.addEventListener("click", function () {
