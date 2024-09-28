@@ -14,3 +14,8 @@
   text-align: center;
   width: 100px;
 }
+
+#non-board-content {
+  margin-top: 20px;
+  text-align: center;
+}

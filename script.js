@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let playerChoice = null;
   let currentPlayer = "X";
   var playerSelectX = document.getElementById("x");
-  var playerSelectY = document.getElementById("y");
+  var playerSelectY = document.getElementById("o");
   var playerSelect = document.getElementById("player-select");
   var status = document.getElementById("status");
   var board = document.getElementById("board");
